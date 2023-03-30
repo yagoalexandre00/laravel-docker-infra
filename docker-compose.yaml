@@ -1,9 +1,24 @@
 version: '3'
 services:
-  maria-db:
-    image: mariadb:latest
+  biblioteca:
+    build: .
+    ports:
+      - 8000:8000
+  mysql-db:
+    image: mysql:latest
     restart: always
+    command: --default-authentication-plugin=mysql_native_password
     environment:
-      MARIADB_ROOT_PASSWORD: 1234
+      MYSQL_USER: biblioteca-admin
+      MYSQL_PASSWORD: 12345678
+      MYSQL_DATABASE: biblioteca-dos-reis
+      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - 3306:3306
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
