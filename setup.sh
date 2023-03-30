@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get -y install ca-certificates curl gnupg
+sudo apt-get -y install ca-certificates curl gnupg vim
 sudo mkdir -m 0755 -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
@@ -9,3 +9,6 @@ echo \
 sudo apt-get update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo service docker start
+
+sudo mkdir /opt/biblioteca
+sudo cp /tmp/Dockerfile /tmp/docker-compose.yaml /tmp/.env /opt/biblioteca
