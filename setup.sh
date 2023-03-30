@@ -11,4 +11,4 @@ sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo service docker start
 
 sudo mkdir /opt/biblioteca
-sudo cp /tmp/Dockerfile /tmp/docker-compose.yaml /tmp/.env /opt/biblioteca
+sudo cp /tmp/Dockerfile /tmp/docker-compose.yaml /tmp/.env /tmp/package.json /opt/biblioteca
